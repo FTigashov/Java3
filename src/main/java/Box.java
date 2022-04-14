@@ -29,5 +29,8 @@ public class Box<T extends Fruit> {
         return Math.abs(this.weightOfBox) == Math.abs(b.getWeightOfBox());
     }
 
-
+    public void replaceBox(Box<T> newBox) {
+        newBox.box.addAll(box);
+        box.clear();
+    }
 }
