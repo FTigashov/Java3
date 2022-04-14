@@ -3,8 +3,12 @@ import java.util.List;
 
 
 public class Box<T extends Fruit> {
-    private List<T> box = new ArrayList<>();
+    private List<T> box;
     private float weightOfBox;
+
+    public Box() {
+        this.box = new ArrayList<>();
+    }
 
     public void addFruit(T fruit) {
         box.add(fruit);
@@ -17,4 +21,13 @@ public class Box<T extends Fruit> {
         }
         return weightOfBox;
     }
+
+    public boolean compareBoxes(Box<?> b) {
+//        System.out.println(this.getWeightOfBox());
+//        System.out.println(b.getWeightOfBox());
+
+        return Math.abs(this.weightOfBox) == Math.abs(b.getWeightOfBox());
+    }
+
+
 }
